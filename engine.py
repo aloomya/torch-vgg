@@ -82,7 +82,7 @@ def train(model: torch.nn.Module,
 											loss_fn, optimizer, device)
 		
 		# Write train loss and accuracy into tensorboard
-		writer.add_scalar("train/loss+acc", {'loss': train_loss,
+		writer.add_scalars("train/loss+acc", {'loss': train_loss,
 											'acc': train_acc}, epoch)
 		writer.flush()
 
@@ -92,7 +92,7 @@ def train(model: torch.nn.Module,
 		test_loss, test_acc = test_step(model, valid_loader, loss_fn, device)
 		
 		# Write validation loss and accuracy into tensorboard
-		writer.add_scalar("test/loss+acc", {'loss': test_loss,
+		writer.add_scalars("test/loss+acc", {'loss': test_loss,
 											'acc': test_acc}, epoch)
 		writer.flush()
 
