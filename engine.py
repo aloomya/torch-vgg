@@ -13,7 +13,7 @@ def train_step(model: torch.nn.Module,
 
     train_loss, train_acc = 0, 0
 
-    for i, (images, labels) in enumerate(tqdm(dataloader)):
+    for i, (images, labels) in enumerate(dataloader):
         # Move tensors to the configured device
         images, labels = images.to(device), labels.to(device)
         one_hot_labels = functional.one_hot(labels, num_classes=100).float()
